@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily: "system-ui, Arial, sans-serif" }}>
-      {/* Header */}
+      {/* Header Azul */}
       <header style={{ background: "#0033a0", color: "white", padding: "16px 5%", position: "sticky", top: 0, zIndex: 100 }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ fontSize: "38px", fontWeight: "bold", display: "flex", alignItems: "center", gap: "12px" }}>
@@ -54,25 +54,18 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero com seu Banner */}
-      <div style={{ position: "relative", height: "680px", background: "#0033a0", overflow: "hidden" }}>
-        <img 
-          src="https://i.imgur.com/2vXzK8L.png" 
-          alt="Banner CredMais" 
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-        <div style={{ position: "absolute", top: "50%", left: "8%", transform: "translateY(-50%)", color: "white", maxWidth: "650px", zIndex: 2 }}>
-          <h1 style={{ fontSize: "52px", lineHeight: "1.1", marginBottom: "20px" }}>
-            Crédito consignado aprovado<br/>com rapidez e segurança
-          </h1>
-          <p style={{ fontSize: "24px", marginBottom: "30px" }}>
-            Para aposentados e pensionistas do INSS. Dinheiro na conta sem burocracia.
-          </p>
-        </div>
+      {/* Hero Azul (sem imagem externa) */}
+      <div style={{ background: "#0033a0", color: "white", padding: "140px 5% 120px", textAlign: "center" }}>
+        <h1 style={{ fontSize: "52px", lineHeight: "1.1", marginBottom: "20px" }}>
+          Crédito consignado aprovado<br/>com rapidez e segurança
+        </h1>
+        <p style={{ fontSize: "24px", maxWidth: "700px", margin: "0 auto 40px" }}>
+          Para aposentados e pensionistas do INSS. Dinheiro na conta sem burocracia.
+        </p>
       </div>
 
       {/* Formulário Centralizado */}
-      <div style={{ maxWidth: "1280px", margin: "-100px auto 80px", padding: "0 5%", position: "relative", zIndex: 10 }}>
+      <div style={{ maxWidth: "1280px", margin: "-90px auto 80px", padding: "0 5%", position: "relative", zIndex: 10 }}>
         <div style={{ 
           background: "white", 
           padding: "50px", 
