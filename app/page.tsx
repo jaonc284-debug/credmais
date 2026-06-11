@@ -45,37 +45,44 @@ export default function Home() {
           <div style={{ fontSize: "36px", fontWeight: "bold", display: "flex", alignItems: "center", gap: "12px" }}>
             <span style={{ fontSize: "46px" }}>C+</span> CredMais
           </div>
-          <div style={{ display: "flex", gap: "35px", fontSize: "17px" }}>
+          <nav style={{ display: "flex", gap: "35px", fontSize: "17px" }}>
             <a href="#" style={{ color: "white" }}>Início</a>
             <a href="#" style={{ color: "white" }}>Empréstimos</a>
             <a href="#" style={{ color: "white" }}>Como Funciona</a>
             <a href="#" style={{ color: "white" }}>Sobre Nós</a>
-          </div>
+          </nav>
         </div>
       </header>
 
-      {/* Hero com Banner */}
-      <div style={{ position: "relative", height: "680px", background: "#0033a0", overflow: "hidden" }}>
+      {/* Hero Banner */}
+      <div style={{ position: "relative", height: "680px", background: "#0033a0" }}>
         <img 
           src="https://i.imgur.com/2vXzK8L.png" 
-          alt="Banner CredMais" 
-          style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.9 }}
+          alt="Banner" 
+          style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.85 }}
         />
         <div style={{ position: "absolute", top: "50%", left: "8%", transform: "translateY(-50%)", color: "white", maxWidth: "650px" }}>
           <h1 style={{ fontSize: "54px", lineHeight: "1.05", marginBottom: "20px" }}>
             Crédito consignado aprovado<br/>com rapidez e segurança
           </h1>
           <p style={{ fontSize: "24px", marginBottom: "30px" }}>
-            Para aposentados e pensionistas. Dinheiro na conta sem burocracia.
+            Para aposentados e pensionistas do INSS
           </p>
         </div>
       </div>
 
-      {/* Formulário Flutuante */}
-      <div style={{ maxWidth: "1280px", margin: "-100px auto 60px", padding: "0 5%", position: "relative", zIndex: 20 }}>
-        <div style={{ background: "white", padding: "50px", borderRadius: "20px", boxShadow: "0 30px 80px rgba(0,0,0,0.25)", maxWidth: "520px" }}>
-          <h2 style={{ textAlign: "center", marginBottom: "30px", color: "#0033a0", fontSize: "28px" }}>
-            Simule agora
+      {/* Formulário Centralizado */}
+      <div style={{ maxWidth: "1280px", margin: "-100px auto 80px", padding: "0 5%", position: "relative", zIndex: 10 }}>
+        <div style={{ 
+          background: "white", 
+          padding: "50px", 
+          borderRadius: "20px", 
+          boxShadow: "0 30px 80px rgba(0,0,0,0.25)",
+          maxWidth: "520px",
+          margin: "0 auto"
+        }}>
+          <h2 style={{ textAlign: "center", marginBottom: "35px", color: "#0033a0", fontSize: "28px" }}>
+            Simule seu Crédito
           </h2>
 
           <select value={beneficio} onChange={e => setBeneficio(e.target.value)} style={{width:"100%", padding:16, margin:"12px 0", borderRadius:10, border:"1px solid #ddd", fontSize:17}}>
@@ -101,7 +108,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Seção Benefícios */}
+      {/* Seção de Vantagens */}
       <div style={{ background: "white", padding: "80px 5%" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "36px", marginBottom: "50px" }}>Por que escolher a CredMais?</h2>
