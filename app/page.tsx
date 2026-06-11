@@ -12,7 +12,7 @@ export default function Home() {
   const formatCPF = (v: string) => v.replace(/\D/g, "").replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4").slice(0,14);
   const formatWhats = (v: string) => v.replace(/\D/g, "").replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3").slice(0,15);
 
-  const enviar = async () => {
+  const enviar = () => {
     if (!nome || !cpf || !whatsapp || !valor) {
       alert("Preencha todos os campos!");
       return;
@@ -20,23 +20,23 @@ export default function Home() {
 
     setLoading(true);
 
-    // Simulação de envio (sem Supabase)
+    // Simulação de envio
     setTimeout(() => {
-      alert("✅ Solicitação enviada com sucesso!\n\nEm breve entraremos em contato pelo WhatsApp.");
+      alert(`✅ Solicitação enviada com sucesso!\n\nNome: ${nome}\nCPF: ${cpf}\nWhatsApp: ${whatsapp}\nValor: R$ ${valor}`);
       setSuccess(true);
       setNome(""); 
       setCpf(""); 
       setWhatsapp(""); 
       setValor("");
       setLoading(false);
-    }, 800);
+    }, 1000);
   };
 
   if (success) {
     return (
       <div style={{ padding: 40, textAlign: "center", minHeight: "100vh", background: "#f0f9f0" }}>
         <h1>✅ Enviado com Sucesso!</h1>
-        <p>Em breve entraremos em contato.</p>
+        <p>Em breve entraremos em contato pelo WhatsApp.</p>
         <button 
           onClick={() => window.location.reload()} 
           style={{ marginTop: 20, padding: "12px 30px", background: "#00A86B", color: "white", border: "none", borderRadius: 8 }}
@@ -52,31 +52,10 @@ export default function Home() {
       <h1 style={{ textAlign: "center", color: "#0066cc" }}>CredMais</h1>
       <p style={{ textAlign: "center", color: "#555" }}>Crédito Consignado INSS</p>
 
-      <input 
-        placeholder="Nome completo" 
-        value={nome} 
-        onChange={e => setNome(e.target.value)} 
-        style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} 
-      />
-      <input 
-        placeholder="CPF" 
-        value={cpf} 
-        onChange={e => setCpf(formatCPF(e.target.value))} 
-        style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} 
-      />
-      <input 
-        placeholder="WhatsApp" 
-        value={whatsapp} 
-        onChange={e => setWhatsapp(formatWhats(e.target.value))} 
-        style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} 
-      />
-      <input 
-        type="number" 
-        placeholder="Valor desejado (R$)" 
-        value={valor} 
-        onChange={e => setValor(e.target.value)} 
-        style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} 
-      />
+      <input placeholder="Nome completo" value={nome} onChange={e => setNome(e.target.value)} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
+      <input placeholder="CPF" value={cpf} onChange={e => setCpf(formatCPF(e.target.value))} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
+      <input placeholder="WhatsApp" value={whatsapp} onChange={e => setWhatsapp(formatWhats(e.target.value))} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
+      <input type="number" placeholder="Valor desejado (R$)" value={valor} onChange={e => setValor(e.target.value)} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
 
       <button 
         onClick={enviar} 
