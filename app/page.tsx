@@ -14,34 +14,30 @@ export default function Home() {
 
   const enviar = () => {
     if (!nome || !cpf || !whatsapp || !valor) {
-      alert("Preencha todos os campos!");
+      alert("❌ Preencha todos os campos!");
       return;
     }
 
     setLoading(true);
 
-    // Simulação de envio
     setTimeout(() => {
-      alert(`✅ Solicitação enviada com sucesso!\n\nNome: ${nome}\nCPF: ${cpf}\nWhatsApp: ${whatsapp}\nValor: R$ ${valor}`);
+      alert(`✅ SOLICITAÇÃO ENVIADA COM SUCESSO!\n\nNome: ${nome}\nCPF: ${cpf}\nWhatsApp: ${whatsapp}\nValor: R$ ${valor}\n\nEm breve entraremos em contato!`);
       setSuccess(true);
       setNome(""); 
       setCpf(""); 
       setWhatsapp(""); 
       setValor("");
       setLoading(false);
-    }, 1000);
+    }, 800);
   };
 
   if (success) {
     return (
-      <div style={{ padding: 40, textAlign: "center", minHeight: "100vh", background: "#f0f9f0" }}>
+      <div style={{ padding: 40, textAlign: "center", minHeight: "100vh", background: "#e6f7e6" }}>
         <h1>✅ Enviado com Sucesso!</h1>
         <p>Em breve entraremos em contato pelo WhatsApp.</p>
-        <button 
-          onClick={() => window.location.reload()} 
-          style={{ marginTop: 20, padding: "12px 30px", background: "#00A86B", color: "white", border: "none", borderRadius: 8 }}
-        >
-          Nova Simulação
+        <button onClick={() => window.location.reload()} style={{ marginTop: 20, padding: "12px 30px", background: "#00A86B", color: "white", border: "none", borderRadius: 8, fontSize: 16 }}>
+          Fazer Nova Simulação
         </button>
       </div>
     );
@@ -50,12 +46,12 @@ export default function Home() {
   return (
     <div style={{ maxWidth: 500, margin: "40px auto", padding: 20, fontFamily: "Arial, sans-serif" }}>
       <h1 style={{ textAlign: "center", color: "#0066cc" }}>CredMais</h1>
-      <p style={{ textAlign: "center", color: "#555" }}>Crédito Consignado INSS</p>
+      <p style={{ textAlign: "center", color: "#555", marginBottom: 30 }}>Crédito Consignado INSS</p>
 
-      <input placeholder="Nome completo" value={nome} onChange={e => setNome(e.target.value)} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
-      <input placeholder="CPF" value={cpf} onChange={e => setCpf(formatCPF(e.target.value))} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
-      <input placeholder="WhatsApp" value={whatsapp} onChange={e => setWhatsapp(formatWhats(e.target.value))} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
-      <input type="number" placeholder="Valor desejado (R$)" value={valor} onChange={e => setValor(e.target.value)} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
+      <input placeholder="Nome completo" value={nome} onChange={e => setNome(e.target.value)} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc", fontSize:16}} />
+      <input placeholder="CPF" value={cpf} onChange={e => setCpf(formatCPF(e.target.value))} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc", fontSize:16}} />
+      <input placeholder="WhatsApp" value={whatsapp} onChange={e => setWhatsapp(formatWhats(e.target.value))} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc", fontSize:16}} />
+      <input type="number" placeholder="Valor desejado (R$)" value={valor} onChange={e => setValor(e.target.value)} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc", fontSize:16}} />
 
       <button 
         onClick={enviar} 
