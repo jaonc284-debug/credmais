@@ -38,8 +38,8 @@ export default function Home() {
   };
 
   return (
-    <div style={{ fontFamily: "system-ui, Arial, sans-serif", background: "#f0f4f8" }}>
-      {/* Header Azul Escuro */}
+    <div style={{ fontFamily: "system-ui, Arial, sans-serif", background: "#f8fafc" }}>
+      {/* Header Azul */}
       <header style={{ background: "#0033a0", color: "white", padding: "16px 5%", position: "sticky", top: 0, zIndex: 100 }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ fontSize: "38px", fontWeight: "bold", display: "flex", alignItems: "center", gap: "12px" }}>
@@ -54,31 +54,22 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section - Azul como Agibank */}
+      {/* Hero */}
       <div style={{ background: "#0033a0", color: "white", padding: "120px 5% 100px", textAlign: "center" }}>
-        <h1 style={{ fontSize: "52px", lineHeight: "1.1", marginBottom: "24px" }}>
+        <h1 style={{ fontSize: "52px", lineHeight: "1.1", marginBottom: "20px" }}>
           Crédito consignado aprovado<br/>com rapidez e segurança
         </h1>
-        <p style={{ fontSize: "24px", maxWidth: "700px", margin: "0 auto 40px" }}>
+        <p style={{ fontSize: "24px", maxWidth: "700px", margin: "0 auto" }}>
           Para aposentados e pensionistas do INSS. Dinheiro na conta sem sair de casa.
         </p>
       </div>
 
       {/* Formulário Centralizado */}
       <div style={{ maxWidth: "1280px", margin: "-90px auto 80px", padding: "0 5%", position: "relative", zIndex: 10 }}>
-        <div style={{ 
-          background: "white", 
-          padding: "55px", 
-          borderRadius: "20px", 
-          boxShadow: "0 30px 80px rgba(0,0,0,0.25)",
-          maxWidth: "520px",
-          margin: "0 auto"
-        }}>
-          <h2 style={{ textAlign: "center", marginBottom: "35px", color: "#0033a0", fontSize: "28px" }}>
-            Simule seu Crédito
-          </h2>
+        <div style={{ background: "white", padding: "50px", borderRadius: "20px", boxShadow: "0 30px 80px rgba(0,0,0,0.25)", maxWidth: "520px", margin: "0 auto" }}>
+          <h2 style={{ textAlign: "center", marginBottom: "30px", color: "#0033a0" }}>Simule seu Crédito</h2>
 
-          <select value={beneficio} onChange={e => setBeneficio(e.target.value)} style={{width:"100%", padding:16, margin:"12px 0", borderRadius:10, border:"1px solid #ddd", fontSize:17}}>
+          <select value={beneficio} onChange={e => setBeneficio(e.target.value)} style={{width:"100%", padding:16, margin:"12px 0", borderRadius:10, border:"1px solid #ddd"}}>
             <option value="">Selecione seu Benefício</option>
             <option value="Aposentadoria por Idade">Aposentadoria por Idade</option>
             <option value="Aposentadoria por Tempo de Contribuição">Aposentadoria por Tempo</option>
@@ -91,15 +82,43 @@ export default function Home() {
           <input placeholder="WhatsApp" value={whatsapp} onChange={e => setWhatsapp(formatWhats(e.target.value))} style={{width:"100%", padding:16, margin:"12px 0", borderRadius:10, border:"1px solid #ddd"}} />
           <input type="number" placeholder="Valor desejado (R$)" value={valor} onChange={e => setValor(e.target.value)} style={{width:"100%", padding:16, margin:"12px 0", borderRadius:10, border:"1px solid #ddd"}} />
 
-          <button 
-            onClick={enviarParaWhats} 
-            disabled={loading}
-            style={{width:"100%", padding:18, background:"#00A86B", color:"white", border:"none", borderRadius:12, fontSize:19, marginTop:30, fontWeight:"bold"}}
-          >
+          <button onClick={enviarParaWhats} disabled={loading} style={{width:"100%", padding:18, background:"#00A86B", color:"white", border:"none", borderRadius:12, fontSize:19, marginTop:30, fontWeight:"bold"}}>
             {loading ? "Abrindo WhatsApp..." : "ENVIAR PELO WHATSAPP"}
           </button>
         </div>
       </div>
+
+      {/* Seção Somos Credenciados */}
+      <div style={{ background: "white", padding: "80px 5%", textAlign: "center" }}>
+        <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>Somos Credenciados</h2>
+        <p style={{ fontSize: "20px", maxWidth: "700px", margin: "0 auto" }}>
+          CredMais é uma empresa autorizada e credenciada para oferecer crédito consignado INSS com total segurança e transparência.
+        </p>
+      </div>
+
+      {/* Seção Dúvidas Frequentes */}
+      <div style={{ background: "#f8fafc", padding: "80px 5%" }}>
+        <h2 style={{ textAlign: "center", marginBottom: "50px", fontSize: "36px" }}>Dúvidas Frequentes</h2>
+        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <details style={{ marginBottom: "15px", background: "white", padding: "20px", borderRadius: "12px" }}>
+            <summary style={{ fontWeight: "bold", cursor: "pointer" }}>Como funciona o crédito consignado?</summary>
+            <p style={{ marginTop: "10px" }}>É um empréstimo com desconto direto na folha de pagamento ou benefício do INSS. Taxas mais baixas e aprovação rápida.</p>
+          </details>
+          <details style={{ marginBottom: "15px", background: "white", padding: "20px", borderRadius: "12px" }}>
+            <summary style={{ fontWeight: "bold", cursor: "pointer" }}>Quem pode solicitar?</summary>
+            <p style={{ marginTop: "10px" }}>Aposentados, pensionistas e beneficiários do INSS com margem disponível.</p>
+          </details>
+          <details style={{ marginBottom: "15px", background: "white", padding: "20px", borderRadius: "12px" }}>
+            <summary style={{ fontWeight: "bold", cursor: "pointer" }}>Quanto tempo leva para receber?</summary>
+            <p style={{ marginTop: "10px" }}>Após aprovação, o dinheiro cai na conta em até 24h úteis.</p>
+          </details>
+        </div>
+      </div>
+
+      <footer style={{ background: "#0033a0", color: "white", padding: "60px 5% 30px", textAlign: "center" }}>
+        <p>© 2026 CredMais - Crédito consignado INSS</p>
+        <p style={{ marginTop: "10px" }}>Empresa autorizada e credenciada</p>
+      </footer>
     </div>
   );
 }
