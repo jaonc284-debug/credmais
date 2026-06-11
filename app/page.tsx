@@ -17,37 +17,27 @@ export default function Home() {
       return;
     }
 
-    setLoading(true);
+    const mensagem = `*🚨 NOVA SOLICITAÇÃO - CREDMAIS*%0A%0A` +
+      `*👤 Cliente:*%0A` +
+      `Nome: ${nome}%0A` +
+      `CPF: ${cpf}%0A` +
+      `WhatsApp: ${whatsapp}%0A%0A` +
+      `*💰 Simulação:*%0A` +
+      `Valor: R$ ${valor}%0A` +
+      `Parcelas: 24x%0A%0A` +
+      `Enviado pelo site - ${new Date().toLocaleString('pt-BR')}`;
 
-    const mensagem = `*🚨 NOVA SOLICITAÇÃO - CREDMAIS*%0A` +
-      `%0A*👤 Dados do Cliente:*%0A` +
-      `• Nome: ${nome}%0A` +
-      `• CPF: ${cpf}%0A` +
-      `• WhatsApp: ${whatsapp}%0A` +
-      `%0A*💰 Dados da Simulação:*%0A` +
-      `• Valor Desejado: *R$ ${valor}*%0A` +
-      `• Tipo: Novo Crédito%0A` +
-      `%0A*📍 Enviado pelo site CredMais*%0A` +
-      `Data: ${new Date().toLocaleString('pt-BR')}`;
+    window.open(`https://wa.me/19988677177?text=${mensagem}`, "_blank");
 
-    const url = `https://wa.me/19988677177?text=${mensagem}`;
+    alert("✅ Abrindo WhatsApp... Revise e envie a mensagem.");
 
-    window.open(url, "_blank");
-
-    alert("✅ Redirecionando para o WhatsApp...\n\nRevise a mensagem e clique em ENVIAR.");
-
-    // Limpa os campos
-    setNome("");
-    setCpf("");
-    setWhatsapp("");
-    setValor("");
-    setLoading(false);
+    setNome(""); setCpf(""); setWhatsapp(""); setValor("");
   };
 
   return (
     <div style={{ maxWidth: 500, margin: "40px auto", padding: 20, fontFamily: "Arial, sans-serif" }}>
       <h1 style={{ textAlign: "center", color: "#0066cc" }}>CredMais</h1>
-      <p style={{ textAlign: "center", color: "#555", marginBottom: 30 }}>Crédito Consignado INSS</p>
+      <p style={{ textAlign: "center", color: "#555" }}>Crédito Consignado INSS</p>
 
       <input placeholder="Nome completo" value={nome} onChange={e => setNome(e.target.value)} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
       <input placeholder="CPF" value={cpf} onChange={e => setCpf(formatCPF(e.target.value))} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
@@ -55,11 +45,10 @@ export default function Home() {
       <input type="number" placeholder="Valor desejado (R$)" value={valor} onChange={e => setValor(e.target.value)} style={{width:"100%", padding:12, margin:"8px 0", borderRadius:8, border:"1px solid #ccc"}} />
 
       <button 
-        onClick={enviarParaWhats} 
-        disabled={loading}
+        onClick={enviarParaWhats}
         style={{width:"100%", padding:16, background:"#00A86B", color:"white", border:"none", borderRadius:8, fontSize:18, marginTop:15, fontWeight:"bold"}}
       >
-        {loading ? "Abrindo WhatsApp..." : "ENVIAR PELO WHATSAPP"}
+        ENVIAR PELO WHATSAPP
       </button>
     </div>
   );
