@@ -38,14 +38,14 @@ export default function Home() {
   };
 
   return (
-    <div style={{ fontFamily: "system-ui, Arial, sans-serif" }}>
-      {/* Header */}
+    <div style={{ fontFamily: "system-ui, Arial, sans-serif", background: "#f0f4f8" }}>
+      {/* Header Azul Escuro */}
       <header style={{ background: "#0033a0", color: "white", padding: "16px 5%", position: "sticky", top: 0, zIndex: 100 }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ fontSize: "36px", fontWeight: "bold", display: "flex", alignItems: "center", gap: "12px" }}>
-            <span style={{ fontSize: "46px" }}>C+</span> CredMais
+          <div style={{ fontSize: "38px", fontWeight: "bold", display: "flex", alignItems: "center", gap: "12px" }}>
+            <span style={{ fontSize: "48px" }}>C+</span> CredMais
           </div>
-          <nav style={{ display: "flex", gap: "35px", fontSize: "17px" }}>
+          <nav style={{ display: "flex", gap: "40px", fontSize: "17px" }}>
             <a href="#" style={{ color: "white" }}>Início</a>
             <a href="#" style={{ color: "white" }}>Empréstimos</a>
             <a href="#" style={{ color: "white" }}>Como Funciona</a>
@@ -54,28 +54,21 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Banner */}
-      <div style={{ position: "relative", height: "680px", background: "#0033a0" }}>
-        <img 
-          src="https://i.imgur.com/2vXzK8L.png" 
-          alt="Banner" 
-          style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.85 }}
-        />
-        <div style={{ position: "absolute", top: "50%", left: "8%", transform: "translateY(-50%)", color: "white", maxWidth: "650px" }}>
-          <h1 style={{ fontSize: "54px", lineHeight: "1.05", marginBottom: "20px" }}>
-            Crédito consignado aprovado<br/>com rapidez e segurança
-          </h1>
-          <p style={{ fontSize: "24px", marginBottom: "30px" }}>
-            Para aposentados e pensionistas do INSS
-          </p>
-        </div>
+      {/* Hero Section - Azul como Agibank */}
+      <div style={{ background: "#0033a0", color: "white", padding: "120px 5% 100px", textAlign: "center" }}>
+        <h1 style={{ fontSize: "52px", lineHeight: "1.1", marginBottom: "24px" }}>
+          Crédito consignado aprovado<br/>com rapidez e segurança
+        </h1>
+        <p style={{ fontSize: "24px", maxWidth: "700px", margin: "0 auto 40px" }}>
+          Para aposentados e pensionistas do INSS. Dinheiro na conta sem sair de casa.
+        </p>
       </div>
 
       {/* Formulário Centralizado */}
-      <div style={{ maxWidth: "1280px", margin: "-100px auto 80px", padding: "0 5%", position: "relative", zIndex: 10 }}>
+      <div style={{ maxWidth: "1280px", margin: "-90px auto 80px", padding: "0 5%", position: "relative", zIndex: 10 }}>
         <div style={{ 
           background: "white", 
-          padding: "50px", 
+          padding: "55px", 
           borderRadius: "20px", 
           boxShadow: "0 30px 80px rgba(0,0,0,0.25)",
           maxWidth: "520px",
@@ -105,27 +98,6 @@ export default function Home() {
           >
             {loading ? "Abrindo WhatsApp..." : "ENVIAR PELO WHATSAPP"}
           </button>
-        </div>
-      </div>
-
-      {/* Seção de Vantagens */}
-      <div style={{ background: "white", padding: "80px 5%" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: "36px", marginBottom: "50px" }}>Por que escolher a CredMais?</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px" }}>
-            <div style={{ padding: "30px", background: "#f8fafc", borderRadius: "16px" }}>
-              <h3>✅ Aprovação Rápida</h3>
-              <p>Análise em poucos minutos</p>
-            </div>
-            <div style={{ padding: "30px", background: "#f8fafc", borderRadius: "16px" }}>
-              <h3>✅ Taxas Competitivas</h3>
-              <p>Melhores condições do mercado</p>
-            </div>
-            <div style={{ padding: "30px", background: "#f8fafc", borderRadius: "16px" }}>
-              <h3>✅ Sem Burocracia</h3>
-              <p>100% online e seguro</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
